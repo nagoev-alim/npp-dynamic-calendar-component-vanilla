@@ -1,0 +1,135 @@
+@import "assets/scss/config/fonts";
+@import "assets/scss/config/reset";
+@import "assets/scss/config/vars";
+@import "assets/scss/config/utility";
+@import "assets/scss/modules/typography";
+@import "assets/scss/modules/fields";
+@import "assets/scss/modules/buttons";
+@import "assets/scss/modules/toast";
+@import "assets/scss/config/global";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.app-author {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.app-container {
+  --gap: 15px;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.calendar {
+  max-width: 300px;
+  width: 100%;
+  display: grid;
+  gap: var(--gap);
+
+  @media (min-width: 576px) {
+    max-width: 500px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .content {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 0 25px 35px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  header {
+    display: grid;
+    gap: 10px;
+    text-align: center;
+
+    @media (min-width: 576px) {
+      display: flex;
+      align-items: center;
+      gap: var(--gap);
+      justify-content: space-between;
+    }
+
+    div {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    button {
+      padding: 10px;
+    }
+  }
+
+  .content {
+    display: grid;
+    gap: var(--gap);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+
+    &:nth-of-type(1) li {
+      font-weight: var(--fw-600);
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    &:nth-of-type(2) li:hover {
+      background-color: var(--bcs-grey-3);
+    }
+
+    li {
+      --color: #bbded6;
+      text-align: center;
+      cursor: pointer;
+      border-radius: var(--radius-round);
+      transition: all 0.25s ease;
+      font-weight: var(--fw-400);
+      height: 32px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+
+      @media (min-width: 576px) {
+        height: 62px;
+        font-size: 19px;
+      }
+
+      &.active {
+        background-color: var(--bcp-grey);
+        color: #fff;
+        font-weight: var(--fw-600);
+      }
+
+      &.inactive {
+        color: var(--bcs-grey-2);
+
+        &:hover {
+          cursor: default;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+
+
+
